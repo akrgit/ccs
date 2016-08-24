@@ -13,6 +13,7 @@
     <a href="/entry/index/">エントリー</a>
     <a href="/system/admin/">管理画面</a>
     <hr>
+    <h1><?php echo $title; ?></h1>
     <?php print($content); ?>
   </body>
 </html>
