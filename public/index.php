@@ -2,16 +2,16 @@
 /**
  * Fuel is a fast, lightweight, community driven PHP5 framework.
  *
- * @package    Fuel
- * @version    1.8
- * @author     Fuel Development Team
- * @license    MIT License
- * @copyright  2010 - 2016 Fuel Development Team
- * @link       http://fuelphp.com
+ * @package		Fuel
+ * @version		1.8
+ * @author		 Fuel Development Team
+ * @license		MIT License
+ * @copyright	2010 - 2016 Fuel Development Team
+ * @link			 http://fuelphp.com
  */
 
 /**
- * Set error reporting and display errors settings.  You will want to change these when in production.
+ * Set error reporting and display errors settings.	You will want to change these when in production.
  */
 error_reporting(-1);
 ini_set('display_errors', 1);

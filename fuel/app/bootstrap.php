@@ -11,7 +11,7 @@ require COREPATH.'bootstrap.php';
 \Autoloader::register();
 
 /**
- * Your environment.  Can be set to any of the following:
+ * Your environment.	Can be set to any of the following:
  *
  * Fuel::DEVELOPMENT
  * Fuel::TEST

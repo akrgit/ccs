@@ -3,8 +3,8 @@
 /**
  * The welcome 404 presenter.
  *
- * @package  app
- * @extends  Presenter
+ * @package	app
+ * @extends	Presenter
  */
 class Presenter_Welcome_404 extends Presenter
 {

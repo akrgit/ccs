@@ -5,10 +5,10 @@
 
 return array(
 	'default' => array(
-		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=ccsdb',
-			'username'   => 'root',
-			'password'   => '',
+		'connection'	=> array(
+			'dsn'				=> 'mysql:host=localhost;dbname=ccsdb',
+			'username'	 => 'root',
+			'password'	 => '',
 		),
 	),
 );

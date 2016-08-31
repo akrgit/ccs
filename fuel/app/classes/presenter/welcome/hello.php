@@ -3,8 +3,8 @@
 /**
  * The welcome hello presenter.
  *
- * @package  app
- * @extends  Presenter
+ * @package	app
+ * @extends	Presenter
  */
 class Presenter_Welcome_Hello extends Presenter
 {

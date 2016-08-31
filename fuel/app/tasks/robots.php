@@ -2,12 +2,12 @@
 /**
  * Fuel is a fast, lightweight, community driven PHP5 framework.
  *
- * @package    Fuel
- * @version    1.8
- * @author     Fuel Development Team
- * @license    MIT License
- * @copyright  2010 - 2016 Fuel Development Team
- * @link       http://fuelphp.com
+ * @package		Fuel
+ * @version		1.8
+ * @author		 Fuel Development Team
+ * @license		MIT License
+ * @copyright	2010 - 2016 Fuel Development Team
+ * @link			 http://fuelphp.com
  */
 
 namespace Fuel\Tasks;
@@ -50,25 +50,25 @@ class Robots
 
 		return \Cli::color("
 					\"{$speech}\"
-			          _____     /
-			         /_____\\", 'blue')."\n"
-.\Cli::color("			    ____[\\", 'blue').$eye.\Cli::color('---', 'blue').$eye.\Cli::color('/]____', 'blue')."\n"
-.\Cli::color("			   /\\ #\\ \\_____/ /# /\\
-			  /  \\# \\_.---._/ #/  \\
-			 /   /|\\  |   |  /|\\   \\
-			/___/ | | |   | | | \\___\\
-			|  |  | | |---| | |  |  |
-			|__|  \\_| |_#_| |_/  |__|
-			//\\\\  <\\ _//^\\\\_ />  //\\\\
-			\\||/  |\\//// \\\\\\\\/|  \\||/
-			      |   |   |   |
-			      |---|   |---|
-			      |---|   |---|
-			      |   |   |   |
-			      |___|   |___|
-			      /   \\   /   \\
-			     |_____| |_____|
-			     |HHHHH| |HHHHH|", 'blue');
+								_____		 /
+							 /_____\\", 'blue')."\n"
+.\Cli::color("					____[\\", 'blue').$eye.\Cli::color('---', 'blue').$eye.\Cli::color('/]____', 'blue')."\n"
+.\Cli::color("				 /\\ #\\ \\_____/ /# /\\
+				/	\\# \\_.---._/ #/	\\
+			 /	 /|\\	|	 |	/|\\	 \\
+			/___/ | | |	 | | | \\___\\
+			|	|	| | |---| | |	|	|
+			|__|	\\_| |_#_| |_/	|__|
+			//\\\\	<\\ _//^\\\\_ />	//\\\\
+			\\||/	|\\//// \\\\\\\\/|	\\||/
+						|	 |	 |	 |
+						|---|	 |---|
+						|---|	 |---|
+						|	 |	 |	 |
+						|___|	 |___|
+						/	 \\	 /	 \\
+					 |_____| |_____|
+					 |HHHHH| |HHHHH|", 'blue');
 	}
 
 	/**
@@ -86,25 +86,25 @@ class Robots
 
 		return \Cli::color("
 					\"PROTECT ALL HUMANS\"
-			          _____     /
-			         /_____\\", 'blue')."\n"
-.\Cli::color("			    ____[\\", 'blue').$eye.\Cli::color('---', 'blue').$eye.\Cli::color('/]____', 'blue')."\n"
-.\Cli::color("			   /\\ #\\ \\_____/ /# /\\
-			  /  \\# \\_.---._/ #/  \\
-			 /   /|\\  |   |  /|\\   \\
-			/___/ | | |   | | | \\___\\
-			|  |  | | |---| | |  |  |
-			|__|  \\_| |_#_| |_/  |__|
-			//\\\\  <\\ _//^\\\\_ />  //\\\\
-			\\||/  |\\//// \\\\\\\\/|  \\||/
-			      |   |   |   |
-			      |---|   |---|
-			      |---|   |---|
-			      |   |   |   |
-			      |___|   |___|
-			      /   \\   /   \\
-			     |_____| |_____|
-			     |HHHHH| |HHHHH|", 'blue');
+								_____		 /
+							 /_____\\", 'blue')."\n"
+.\Cli::color("					____[\\", 'blue').$eye.\Cli::color('---', 'blue').$eye.\Cli::color('/]____', 'blue')."\n"
+.\Cli::color("				 /\\ #\\ \\_____/ /# /\\
+				/	\\# \\_.---._/ #/	\\
+			 /	 /|\\	|	 |	/|\\	 \\
+			/___/ | | |	 | | | \\___\\
+			|	|	| | |---| | |	|	|
+			|__|	\\_| |_#_| |_/	|__|
+			//\\\\	<\\ _//^\\\\_ />	//\\\\
+			\\||/	|\\//// \\\\\\\\/|	\\||/
+						|	 |	 |	 |
+						|---|	 |---|
+						|---|	 |---|
+						|	 |	 |	 |
+						|___|	 |___|
+						/	 \\	 /	 \\
+					 |_____| |_____|
+					 |HHHHH| |HHHHH|", 'blue');
 
 	}
 }
