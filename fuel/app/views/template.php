@@ -3,9 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title> <?php print($title); ?></title>
-
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-	<link href="http://resource.simple-way.jp/system/bootstrap/3.2/sw.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/style.css" rel="stylesheet">
 
 	</head>
@@ -15,5 +13,6 @@
 		<hr>
 		<h1><?php echo $title; ?></h1>
 		<?php print($content); ?>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</body>
 </html>
