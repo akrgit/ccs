@@ -11,14 +11,17 @@ class Controller_System_Admin_Entry extends Controller_Template {
 
 	}
 
-	public function action_index() {
+	public function action_index()
+	{
 		$data = array();
-		$data['result'] = Model_System_Admin_Entry::find_all();
+		$data['result'] = Model_Entry::find_all();
 		$this->template->title ='エントリー　一覧';
 		$this->template->content = View::forge('system/admin/entry/index', $data);
 	}
-	public function action_edit() {
-		if ($id = Input::get('entry_ids')) {
+	public function action_edit()
+	{
+		if ($id = Input::get('entry_ids'))
+		{
 			Session::set_flash('msg', 'ID:'.$id.'を編集...');
 			$data['id_edit'] = $id;
 		}
@@ -27,8 +30,9 @@ class Controller_System_Admin_Entry extends Controller_Template {
 			Session::set_flash('msg', '編集するIDが指定されていません。');
 			$data['id_edit'] = '';
 		}
-		if (Input::post('submit')) {
-			if (true)
+		if (Input::post('submit'))
+		{
+			if (true) //ここに編集する処理を書く。
 			{
 				Session::set_flash('msg', '変更しました。');
 				$data['id_edit'] = '';
@@ -43,21 +47,28 @@ class Controller_System_Admin_Entry extends Controller_Template {
 		$this->template->title ='エントリー　編集';
 		$this->template->content = View::forge('system/admin/entry/edit', $data);
 	}
-	public function action_delete() {
+	public function action_delete()
+	{
 		$data = array();
-		if ($id = Input::get('entry_ids')) {
+		if ($id = Input::get('entry_ids'))
+		{
 			Session::set_flash('msg', 'ID:'.$id.'を削除してもよろしいですか？');
 			$data['id_del'] = $id;
 			Session::set_flash('id', $id);
-		}else{
+		}
+		else
+		{
 			Session::set_flash('msg', '削除するIDが指定されていません。');
 			$data['id_del'] = '';
 		}
 
-		if (Input::post('submit')) {
-			if ($item = Model_System_Admin_Admin::find(Session::get_flash('id')))
+		if (Input::post('submit'))
+		{
+			$id_del = Input::post('id');
+			$entry = Model_Entry::find_by_pk($id_del);
+			if ($entry)
 			{
-				$item->delete();
+				$entry->delete();
 				Session::set_flash('msg', '削除しました。');
 				$data['id_del'] = '';
 			}
@@ -67,7 +78,8 @@ class Controller_System_Admin_Entry extends Controller_Template {
 				$data['id_del'] = '';
 			}
 		}
+
 		$this->template->title ='エントリー　削除';
-		$this->template->content = View::forge('system/admin/entry/delete',$data);
+		$this->template->content = View::forge('system/admin/entry/delete', $data);
 	}
 }

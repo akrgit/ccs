@@ -1,32 +1,27 @@
-<p>
-	<a href="edit">エントリー 編集</a>
-</p>
-<p>
-	<a href="delete">エントリー 削除</a>
-</p>
 <hr>
 <table>
 	<tr>
 		<th>
-			foo1
+			ID
 		</th>
 		<th>
-			foo2
+			EntryName
 		</th>
 	</tr>
+<?php foreach ($result as $entry) { ?>
 	<tr>
 		<td>
-			bar1
+			<?php echo $entry->entry_id; ?>
 		</td>
 		<td>
-			bar2
+			<?php echo $entry->entry_name; ?>
 		</td>
+		<td>
+			<a href="/system/admin/entry/edit?entry_ids=<?php echo $entry->entry_id; ?>">編集</a>
+			<a href="/system/admin/entry/delete?entry_ids=<?php echo $entry->entry_id; ?>">削除</a>
+		</td>
+
 	</tr>
+<?php } ?>
 </table>
 <hr>
-
-<?php
-// 取得したオブジェクトをここに出力する
-// admin/indexとほぼ同じ
-//echo $result[0][_data:protected][entry_id]; ?>
-<?php print_r($result[0]); ?>

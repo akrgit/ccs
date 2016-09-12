@@ -13,7 +13,7 @@ class Controller_System_Admin_Admin extends Controller_Template {
 	public function action_index()
 	{
 		$data = array();
-		$data['result'] = Model_System_Admin_Admin::find_all();
+		$data['result'] = Model_Admin::find_all();
 		$this->template->title ='管理者　一覧';
 		$this->template->content = View::forge('system/admin/admin/index',$data);
 	}
@@ -29,8 +29,11 @@ class Controller_System_Admin_Admin extends Controller_Template {
 			$data['id_edit'] = '';
 		}
 		if (Input::post('submit')) {
-			if (true)
+			$id_edit = Input::post('id');
+			$admin = Model_Admin::find_by_pk($id_edit);
+			if ($admin)
 			{
+				$admin->save();
 				Session::set_flash('msg', '変更しました。');
 				$data['id_edit'] = '';
 			}
@@ -48,7 +51,8 @@ class Controller_System_Admin_Admin extends Controller_Template {
 	public function action_delete()
 	{
 		$data = array();
-		if ($id = Input::get('admin_ids')) {
+		if ($id = Input::get('admin_ids'))
+		{
 			Session::set_flash('msg', 'ID:'.$id.'を削除してもよろしいですか？');
 			$data['id_del'] = $id;
 			Session::set_flash('id', $id);
@@ -59,10 +63,13 @@ class Controller_System_Admin_Admin extends Controller_Template {
 			$data['id_del'] = '';
 		}
 
-		if (Input::post('submit')) {
-			if (true)
+		if (Input::post('submit'))
+		{
+			$id_del = Input::post('id');
+			$admin = Model_Admin::find_by_pk($id_del);
+			if ($admin)
 			{
-				$item->delete();
+				$admin->delete();
 				Session::set_flash('msg', '削除しました。');
 				$data['id_del'] = '';
 			}

@@ -1,9 +1,3 @@
-<p>
-	<a href="edit">管理者 編集</a>
-</p>
-<p>
-	<a href="delete">管理者 削除</a>
-</p>
 <hr>
 <table>
 	<tr>
@@ -15,22 +9,22 @@
 		</th>
 	</tr>
 	<!-- foreachで出力する -->
+	<?php foreach ($result as $admin) { ?>
 		<tr>
 			<td>
-				1
+				<?php echo $admin->id; ?>
 			</td>
 			<td>
-				あいうえお
+				<?php echo $admin->username; ?>
 			</td>
 			<td>
-				<a href="edit?admin_ids=1">編集</a>
-				<a href="delete?admin_ids=1">削除</a>
+				<a href="/system/admin/admin/edit?admin_ids=<?php echo $admin->id; ?>">編集</a>
+				<a href="/system/admin/admin/delete?admin_ids=<?php echo $admin->id; ?>">削除</a>
 			</td>
 
 		</tr>
 		<!-- 出力ここまで -->
+
+	<?php } ?>
 </table>
 <hr>
-
- 取得したオブジェクトを以下に出力する
-<?php print_r($result); ?>

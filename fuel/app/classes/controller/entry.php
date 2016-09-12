@@ -2,20 +2,9 @@
 class Controller_Entry extends Controller_Template {
 	public function action_index() {
 		$this->template->title = 'エントリー';
-
-		$val = Validation::forge();
-		$val->add('name','お名前')->add_rule('required');
-		$val->add('ruby','フリガナ')->add_rule('required');
-		// $val->add('birthday','生年月日')->add_rule('required');
-		$val->add('prefecture','都道府県')->add_rule('required');
-		$val->add('address','住所')->add_rule('required');
-		$val->add('telephone_h','電話番号（上）')->add_rule('required');
-		$val->add('telephone_m','電話番号（中）')->add_rule('required');
-		$val->add('telephone_l','電話番号（下）')->add_rule('required');
-		$val->add('email','メールアドレス')->add_rule('required')->add_rule('valid_email');
 		$data = array();
+		$val = Model_Entry::val_entry();
 		$data['val'] = $val;
-
 		if (Input::post('submit')) {
 			Session::set_flash('name',Input::post('name'));
 			Session::set_flash('ruby',Input::post('ruby'));
@@ -57,7 +46,7 @@ class Controller_Entry extends Controller_Template {
 			$data['entry_email'] = Session::get_flash('email');
 			$data['entry_magazine'] = Session::get_flash('entry_magazine');
 			$data['entry_magazine_type'] = Session::get_flash('entry_magazine_type');
-
+// 変数名
 			$info->set($data);
 			if ($info->save()) {
 				$this->template->content = View::forge('entry/thanks');
