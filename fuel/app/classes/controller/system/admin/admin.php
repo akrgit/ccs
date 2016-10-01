@@ -9,7 +9,6 @@ class Controller_System_Admin_Admin extends Controller_Template {
 		}
 
 	}
-
 	public function action_index()
 	{
 		$data = array();
@@ -17,10 +16,13 @@ class Controller_System_Admin_Admin extends Controller_Template {
 		$this->template->title ='管理者　一覧';
 		$this->template->content = View::forge('system/admin/admin/index',$data);
 	}
-	public function action_edit() {
+	public function action_edit()
+	{
 		$data = array();
 		if ($id = Input::get('admin_ids')) {
 			Session::set_flash('msg', 'ID:'.$id.'を編集...');
+			$admin = Model_Admin::find_by_pk($id);
+			$data['admin'] = $admin;
 			$data['id_edit'] = $id;
 		}
 		else
@@ -30,11 +32,11 @@ class Controller_System_Admin_Admin extends Controller_Template {
 		}
 		if (Input::post('submit')) {
 			$id_edit = Input::post('id');
-			$admin = Model_Admin::find_by_pk($id_edit);
+			$admin = Model_Admin::find_by_pk(Input::post('id'));
 			if ($admin)
 			{
-				$admin->save();
-				Session::set_flash('msg', '変更しました。');
+				$admin->save_admin();
+				Session::set_flash('msg', '<p>変更しました。</p> <a href="/system/admin/admin/">一覧へ戻る</a>');
 				$data['id_edit'] = '';
 			}
 			else
@@ -70,7 +72,7 @@ class Controller_System_Admin_Admin extends Controller_Template {
 			if ($admin)
 			{
 				$admin->delete();
-				Session::set_flash('msg', '削除しました。');
+				Session::set_flash('msg', '<p>削除しました。</p><a href="/system/admin/admin/">一覧へ戻る</a>');
 				$data['id_del'] = '';
 			}
 			else

@@ -11,6 +11,7 @@
 		<a href="/entry/index/">エントリー</a>
 		<a href="/system/admin/">管理画面</a>
 		<a href="/system/admin/create">管理者登録</a>
+		<a href="/phpmyadmin">PMA</a>
 		<hr>
 		<h1><?php echo $title; ?></h1>
 		<?php print($content); ?>

@@ -8,11 +8,12 @@
 			UserName
 		</th>
 	</tr>
-	<!-- foreachで出力する -->
 	<?php foreach ($result as $admin) { ?>
 		<tr>
 			<td>
+				[
 				<?php echo $admin->id; ?>
+				]
 			</td>
 			<td>
 				<?php echo $admin->username; ?>

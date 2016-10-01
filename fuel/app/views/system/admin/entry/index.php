@@ -11,7 +11,9 @@
 <?php foreach ($result as $entry) { ?>
 	<tr>
 		<td>
+			[
 			<?php echo $entry->entry_id; ?>
+			]
 		</td>
 		<td>
 			<?php echo $entry->entry_name; ?>

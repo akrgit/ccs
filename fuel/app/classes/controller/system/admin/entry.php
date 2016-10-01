@@ -23,6 +23,9 @@ class Controller_System_Admin_Entry extends Controller_Template {
 		if ($id = Input::get('entry_ids'))
 		{
 			Session::set_flash('msg', 'ID:'.$id.'を編集...');
+			Session::set_flash('id', $id);
+			$entry = Model_Entry::find_by_pk($id);
+			$data['entry'] = $entry;
 			$data['id_edit'] = $id;
 		}
 		else
@@ -32,9 +35,16 @@ class Controller_System_Admin_Entry extends Controller_Template {
 		}
 		if (Input::post('submit'))
 		{
-			if (true) //ここに編集する処理を書く。
+			if (Input::post())
 			{
-				Session::set_flash('msg', '変更しました。');
+				$entry = Model_Entry::find_by_pk(Session::get_flash('id'));
+				$val = $entry->save_entry();
+				$numeric = is_numeric(Input::post('entry_telephone_h')) && is_numeric( Input::post('entry_telephone_m')) && is_numeric(Input::post('entry_telephone_l'));
+				if ($val->run() && $numeric) {
+					Session::set_flash('msg', '<p>変更しました。</p> <a href="/system/admin/entry/">一覧へ戻る</a>');
+				}else{
+					Session::set_flash('msg', '<p>変更に失敗しました。</p> <a href="/system/admin/entry/">一覧へ戻る</a>');
+				}
 				$data['id_edit'] = '';
 			}
 			else
@@ -69,7 +79,7 @@ class Controller_System_Admin_Entry extends Controller_Template {
 			if ($entry)
 			{
 				$entry->delete();
-				Session::set_flash('msg', '削除しました。');
+				Session::set_flash('msg', '<p>削除しました。</p><a href="/system/admin/entry/">一覧へ戻る</a>');
 				$data['id_del'] = '';
 			}
 			else

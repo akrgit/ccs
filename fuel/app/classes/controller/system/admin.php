@@ -60,7 +60,7 @@ class Controller_System_Admin extends Controller_Template {
 		$this->template->content = View::forge('system/admin/create');
 	if (Input::method() == 'POST') {
 		$auth = Auth::instance();
-		$auth->create_user(Input::post('username'), Input::post('password'), 'abc@example.com');
+		$auth->create_user(Input::post('username'), Input::post('password'), rand().'@example.com');
 		Response::redirect('system/admin');
 	}
 
